@@ -16,7 +16,7 @@ FreeMap 是一个以地图为核心的免费二手物品发现原型。项目将
 
 当前版本使用演示数据，没有连接真实交易平台。距离以新加坡 City Hall 为固定参考点计算，不读取用户定位。本文记录设计思路、已实现行为与技术取舍；没有开展用户研究，也没有以原型测试替代真实使用效果评估。
 
-[项目入口](README.md) · [开发与运行说明](docs/development.md)
+[Live Demo](https://yuxuanweng618.github.io/freemap/) · [项目入口](README.md) · [开发与运行说明](docs/development.md)
 
 ## 01. Problem
 

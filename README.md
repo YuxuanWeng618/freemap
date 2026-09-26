@@ -21,7 +21,7 @@ Node.js 本地预览与逻辑测试 · Playwright 浏览器验证
 
 ## Live Demo
 
-在线演示链接将在 GitHub Pages 发布验证后补充。
+[Open FreeMap →](https://yuxuanweng618.github.io/freemap/)
 
 演示数据不代表真实可领取物品；未使用用户定位，未接入 Marketplace 数据。
 
