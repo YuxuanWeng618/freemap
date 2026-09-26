@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0c1620" />
+  <meta name="description" content="A little exploring, a great find. Discover demo free furniture, electronics and more on a map of Singapore." />
+  <title>FreeMap — Good finds, closer to home.</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./vendor/leaflet.css" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./vendor/leaflet.js" defer></script>
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="FreeMap home"><span class="brand-symbol" data-icon="map"></span><span class="wordmark">Free<span>Map</span></span><span class="brand-tagline">Good finds.<br />Closer to home.</span></a>
+    <nav class="categories" aria-label="Filter items by category" id="categories"></nav>
+    <div class="header-tools">
+      <div class="radius-control"><div class="radius-label"><label for="radius">Search radius</label><output for="radius" id="radius-value">10 <span>km</span></output></div><input id="radius" type="range" min="1" max="30" step="1" value="10" aria-describedby="radius-help" /><span id="radius-help" class="sr-only">Distance from the fixed Singapore reference centre at City Hall, not your location.</span></div>
+      <button class="demo-badge" id="demo-info" aria-label="About the demo data"><span></span>Demo<span data-icon="info"></span></button>
+    </div>
+  </header>
+  <main class="workspace" id="workspace">
+    <div id="map" aria-label="Interactive map of free demo items in Singapore"></div>
+    <div class="map-vignette" aria-hidden="true"></div>
+    <div class="location-heading"><span class="eyebrow"><span class="location-dot"></span>SINGAPORE</span><h1>Find a little treasure.</h1><p>One person’s extra. Your next favourite.</p></div>
+    <button class="stash-trigger floating" id="stash-toggle" aria-controls="stash-panel" aria-expanded="false"><span data-icon="heart"></span><span>Your stash</span><span class="count-badge" id="stash-count">0</span></button>
+    <div class="map-error floating" id="map-error" role="status" hidden><span data-icon="wifi"></span><div><strong>Map tiles couldn’t load</strong><p>Your finds are still available. Check your connection.</p></div><button id="retry-map">Retry</button></div>
+    <section class="empty-map floating" id="empty-map" hidden aria-live="polite"><span class="empty-symbol" data-icon="search"></span><h2>No treasures in this view.</h2><p>Try a wider radius or explore another part of the map.</p><button class="primary" id="reset-filters">Show all finds</button></section>
+    <section id="detail" class="detail-panel floating" role="dialog" aria-modal="false" aria-labelledby="detail-title" hidden></section>
+    <aside id="stash-panel" class="stash-panel floating" role="dialog" aria-modal="false" aria-labelledby="stash-title" hidden>
+      <div class="panel-heading"><div><span class="eyebrow">KEEP THE GOOD ONES</span><h2 id="stash-title">Your stash <span id="stash-panel-count">0</span></h2></div><button class="icon-button" id="close-stash" aria-label="Close stash"><span data-icon="close"></span></button></div>
+      <p class="stash-description">Little finds worth coming back to.</p><div id="stash-list"></div><div class="stash-footer"><span data-icon="lock"></span>Saved on this device. All listings are demos.</div>
+    </aside>
+    <aside class="legend floating" aria-label="Item freshness legend"><span class="eyebrow">FRESHNESS</span><ul><li><i class="fresh-dot"></i>Just dropped <span>≤ 2h</span></li><li><i class="recent-dot"></i>A few hours old <span>2–12h</span></li><li><i class="stale-dot"></i>Getting stale <span>12–48h</span></li><li><i class="old-dot"></i>Likely gone <span>&gt; 48h</span></li></ul><p>Older posts may still be available.</p></aside>
+    <div class="results-dock floating" aria-live="polite" aria-atomic="true"><span class="result-spark" data-icon="spark"></span><div><strong><span id="visible-count">0</span> free finds</strong><span class="results-subtitle">in this view</span></div><span class="dock-divider"></span><span id="category-description">A little exploring goes a long way.</span></div>
+    <div class="map-controls"><button class="floating icon-button recenter" id="recenter" aria-label="Return to Singapore overview" title="Return to Singapore overview"><span data-icon="target"></span></button><div class="zoom-controls floating"><button class="icon-button" id="zoom-in" aria-label="Zoom in"><span data-icon="plus"></span></button><button class="icon-button" id="zoom-out" aria-label="Zoom out"><span data-icon="minus"></span></button></div></div>
+    <div class="map-note">DEMO FINDS <span>·</span> Distance from City Hall reference centre</div>
+    <div class="toast floating" id="toast" role="status" hidden></div>
+  </main>
+  <dialog id="about-dialog" class="about-dialog floating"><button class="icon-button" id="close-about" aria-label="Close demo information"><span data-icon="close"></span></button><span class="eyebrow">A NEIGHBOURHOOD OF POSSIBILITIES</span><h2>Small finds.<br />Second beginnings.</h2><p>This is a working demo of FreeMap in Singapore. Explore sample listings, filter your finds and save your favourites.</p><div class="about-note"><span data-icon="info"></span><p>Listings and locations are illustrative. There are no live offers or original posts to claim. Distances are measured from City Hall, not your current location.</p></div><p class="about-fine">Favourites stay in this browser. The map uses online tiles; no location permission is requested.</p><button class="primary" id="start-exploring">Let’s explore <span data-icon="arrow"></span></button></dialog>
+  <noscript><div class="noscript">Enable JavaScript to explore FreeMap.</div></noscript>
+</body>
+</html>

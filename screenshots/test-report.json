@@ -1,0 +1,19 @@
+{
+  "passed": 13,
+  "checks": [
+    "Desktop: live map tiles, 51 radius-filtered markers and correct visible count",
+    "Detail: correct item, reference-centre distance, disabled demo source",
+    "Stash persists after reload, opens item, and Escape restores marker focus",
+    "Category filters real markers and closes a now-excluded detail",
+    "Radius changes the result set (0 at 1 km, 60 at 30 km); empty reset works",
+    "Zoom transforms geographic markers; panning recalculates visible results",
+    "Remove favourite, empty stash and accessible demo dialog",
+    "390 px mobile: no overflow, keyboard item activation, usable details and stash",
+    "1280 px desktop has no horizontal overflow",
+    "Corrupt saved data recovers safely",
+    "Missing photo displays a labelled category fallback",
+    "Map failure preserves markers and offers a working retry",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

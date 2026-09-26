@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+.playwright-mcp/
+test-results/
+playwright-report/
+screenshots/test-failure.png
+实现记录.md
